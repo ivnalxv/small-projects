@@ -10,8 +10,6 @@ using namespace std;
 
 
 signed main() {
-    //time_t rd = time(NULL);
-    file;
     srand(time(0));
 
     vector<string> sog = {"q", "w", "r", "t", "p", "s", "d", "f", "g", "h", "j", "k", "l", "z", "x", "c", "v",
@@ -27,10 +25,17 @@ signed main() {
     "q", "w", "r", "t", "p", "s", "d", "f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "b", "n", "m", "oi", "io", "aa", "ee", "uu", "ii", "oo",
     "e", "u", "o", "a", "i", "eu", "ue", "ei", "ie", "eo", "oe", "ea", "ae", "ui", "iu", "uo", "ou", "ua", "au", "oa", "ao"};
 
-    int p = 10000;
+    int p, l;
+    cout << "How many names: ";
+    cin >> p;
+
+    cout << "How long can it be: ";
+    cin >> l;
+
+    freopen("names.txt", "w", stdout);
     while(p--) {
         string name = "";
-        int len = rand()%10 + 1, n = slog.size();
+        int len = rand()%l + 1, n = slog.size();
         while(len--) {
             name += slog[rand()%n];
         }
@@ -38,8 +43,8 @@ signed main() {
             //cout << name << endl;
             continue;
         }
-        if (name.size() > 10) {
-            name = name.substr(0, 10);
+        if (name.size() > l) {
+            name = name.substr(0, l);
         }
 
         bool pir = 0;
